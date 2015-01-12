@@ -5,7 +5,7 @@ class SqlHelper{
 		public $conn;
 		public $dbname="findjob";
 		public $username="root";
-		public $password="root";
+		public $password="123456";
 		public $host="localhost";
 
 		public function __construct(){
