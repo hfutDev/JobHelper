@@ -47,7 +47,11 @@ class image {
                         //文件的类型(不是靠后缀名 )
                         $file_type=$fileInfo["type"];
                         //'image/jpg','image/jpeg', 'image/png', 'image/pjpeg', 'image/gif',
+<<<<<<< HEAD
                         if($file_type!="image/jpeg" and $file_type!="image/jpg" and $file_type!="image/pjpeg")
+=======
+                        if($file_type!="image/jpeg" and $file_type!="image/jpg" and $file_type!="image/png" and $file_type!="image/pjpeg" and $file_type!="image/gif")
+>>>>>>> master
                         {
                             $flag=1;
                             ?>
