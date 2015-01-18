@@ -22,7 +22,7 @@ require(dirname(__FILE__).'/../global.php');
 
 	$image=new image();
 	
-	$movepath="/images/face/";
+	$movepath=dirname(__FILE__)."/images/face/";
 	$headpic=$image->uploadImage($movepath);
 	
 	

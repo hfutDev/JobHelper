@@ -25,7 +25,7 @@
 			<fieldset>
 					<legend>修改信息</legend>
 					<p>
-		昵称：<input type="text" value="<?php echo $person->getID(); ?>" name="nickname" /><br />
+		昵称：<input type="text" value="<?php echo $person->getNickName(); ?>" name="nickname" /><br />
 		请选择你要上传头像:<input type="file" name="headpic" /><br />
 		学院：<input type="text" value="<?php echo $person->getDept(); ?>" name="dept" /><br />
 		专业：<input type="text" value="<?php echo $person->getMajor(); ?>" name="major" /><br />

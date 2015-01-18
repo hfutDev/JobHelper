@@ -46,8 +46,18 @@
 			$sqlHelper->close_connect();
 			return $res;
 		}
+		function uiIndexData(){
+			$sql="select ID,NickName,HeadPic,Dept,Major,Company from person order by Good asc,ID desc";
+			$sqlHelper=new SqlHelper();
+			//这里的$res就是一个二维数组
+			$res=$sqlHelper->execute_dql($sql);
+			//释放资源和关闭连接
+			//关闭连接
+			$sqlHelper->close_connect();
+			return $res;
+		}
 		function getSecondData($id){
-			$sql="select ID,NickName,HeadPic,Year,Degree,Oneword,FakeClick,Good,Dept,Major,Company,Position,QQ,Tel,WeChat,Email from person where ID=$id";
+			$sql="select ID,NickName,HeadPic,Year,Degree,Oneword,FakeClick,Share,Good,Dept,Major,Company,Position,QQ,Tel,WeChat,Suggest,Email from person where ID=$id";
 			$sqlHelper=new SqlHelper();
 			$arr=$sqlHelper->execute_dql($sql);
 			$fakeclick=$arr[0]['FakeClick']+1;
@@ -56,25 +66,27 @@
 			$sql2="update person set FakeClick=$fakeclick where ID=$id";
 			$sqlHelper->execute_dml($sql2);
 			$sqlHelper->close_connect();
-			$person=new Person();
-			$person->setId($arr[0]['ID']);
-			$person->setNickName($arr[0]['NickName']);
-			$person->setHeadPic($arr[0]['HeadPic']);  
-			$person->setDept($arr[0]['Dept']);
-			$person->setMajor($arr[0]['Major']);
-			$person->setYear($arr[0]['Year']);
-			$person->setDegree($arr[0]['Degree']);
-			$person->setCompany($arr[0]['Company']);
-			$person->setPosition($arr[0]['Position']);
-			$person->setAddress($arr[0]['Address']);  
-			$person->setOneword($arr[0]['Oneword']);
-			$person->setWeChat($arr[0]['WeChat']);
-			$person->setTel($arr[0]['Tel']);
-			$person->setEmail($arr[0]['Email']);
-			$person->setGood($arr[0]['Good']);  
-			$person->setFakeClick($arr[0]['FakeClick']);
-			$person->setQQ($arr[0]['QQ']);
-			return $person;
+			// $person=new Person();
+			// $person->setId($arr[0]['ID']);
+			// $person->setNickName($arr[0]['NickName']);
+			// $person->setHeadPic($arr[0]['HeadPic']);  
+			// $person->setDept($arr[0]['Dept']);
+			// $person->setMajor($arr[0]['Major']);
+			// $person->setYear($arr[0]['Year']);
+			// $person->setDegree($arr[0]['Degree']);
+			// $person->setCompany($arr[0]['Company']);
+			// $person->setPosition($arr[0]['Position']);
+			// $person->setAddress($arr[0]['Address']);  
+			// $person->setOneword($arr[0]['Oneword']);
+			// $person->setWeChat($arr[0]['WeChat']);
+			// $person->setTel($arr[0]['Tel']);
+			// $person->setEmail($arr[0]['Email']);
+			// $person->setGood($arr[0]['Good']);
+			// $person->setSuggest($arr[0]['Suggest']); 
+			// $person->setShare($arr[0]['Share']);   
+			// $person->setFakeClick($arr[0]['FakeClick']);
+			// $person->setQQ($arr[0]['QQ']);
+			return $arr;
 		}
 		function getSuggest($id){
 			$sql="select Suggest from person where ID=$id";
@@ -151,6 +163,9 @@
 			$sqlHelper=new SqlHelper();
 			//0, 1 ,2
 			return $sqlHelper->execute_dml($sql);
+		}
+		function search($keyword){
+			$sql="select ";
 		}
 	}
 ?>
