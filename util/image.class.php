@@ -12,7 +12,8 @@ class image {
                 //输出jpeg图像
                 header('Content-type:image/jpeg');
                 imagejpeg($newImage,$imgName,99);
-               imagedestroy ( $filename );  //若不用于显示则不用该方法。
+               
+              // imagedestroy ( $filename );  //若不用于显示则不用该方法。
                 return $imgName;
 }
      public function uploadImage($movepath){
@@ -23,7 +24,8 @@ class image {
                         $fileInfo=$_FILES["headpic"];
 
                         //看看上传文件名
-                        $headpic=time().$fileInfo["name"];
+                        // $headpic=time().$fileInfo["name"];
+                        $headpic=time().".jpg";
                         //文件大小,按照字节
                         $file_size=$fileInfo["size"];
                         //不能上传文件大于 1m
@@ -69,10 +71,18 @@ class image {
                         if($file_error==0&&$flag==0)
                         {
                             //移动到指定位置
-                             $path=getcwd();
+                         $path=getcwd();
+
                            $file_full_path=$path."/images/face/".$headpic;
+
                            // $file_full_path=$movepath.$newname;
-                          $this->thumbnail($tem_name,100,$file_full_path);
+                           list ($width,$height )=getimagesize($tem_name);
+                           if ($width<=100) {
+                               move_uploaded_file($tem_name, $file_full_path);
+                           }else{
+                             $this->thumbnail($tem_name,100,$file_full_path);
+                           }
+                         
 
                           
                         }else{
