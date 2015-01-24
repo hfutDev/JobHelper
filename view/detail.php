@@ -2,13 +2,14 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;user-scalable=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="format-detection" content="telephone=no">
     <title>学长学姐帮你找工作</title>
     <link rel="stylesheet" type="text/css" href="../css/appdetail.css">
     <script src="http://cdn.bootcss.com/zepto/1.1.4/zepto.min.js"></script>
+    <script src="../js/detail.js"></script>
     <!--[if lt IE 9]>
     <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
     <![endif]-->
@@ -46,7 +47,7 @@
                 <h1><?php echo $person[0]['Oneword']; ?></h1>
             </div>
             <div class="zan">
-                <label for=""><?php echo $person[0]['Good']; ?></label>
+                <label data-id="<?php echo $person[0]['ID'];?>"><?php echo $person[0]['Good']; ?></label>
                 <span class="zan-icon"></span>
             </div>
         </div>
