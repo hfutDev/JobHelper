@@ -1,8 +1,9 @@
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 <?php
 require(dirname(__FILE__).'/../global.php');
-	include_once 'service/personService.class.php';
-		include_once 'util/image.class.php';
+include_once 'service/personService.class.php';
+include_once 'util/image.class.php';
+
 	$flag=$_GET['flag'];
 	$id=$_GET['id'];
 	
@@ -31,8 +32,10 @@ if($flag=="updata"){
 		
 
 	}else{
-		$personmodel=new Person();
-		$headpic=$personmodel->getHeadpic($id);
+		$personmodel=new PersonService();
+		$person_1=$personmodel->getPersonById($id);
+		$headpic=$person_1->getHeadPic();
+		
 	}
 
 	
