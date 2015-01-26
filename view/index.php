@@ -29,7 +29,7 @@ require(dirname(__FILE__).'/../global.php');
 require_once 'service/personService.class.php';
 $personservice=new PersonService();
 $indexdata=$personservice->uiIndexData();
-// echo json_encode($indexdata);
+//echo json_encode($indexdata);
 $start=0;
 $end=6;
 

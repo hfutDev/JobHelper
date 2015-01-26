@@ -35,7 +35,7 @@
     <div class="main-top">
         <div class="main-info">
             <div class="avator">
-                <img src="../images/face/default.jpg" alt=""/>
+                <img src="../images/face/<?php echo $person[0]['HeadPic']; ?>" alt=""/>
             </div>
             <div class="nick">
                 <h1>
@@ -47,7 +47,7 @@
                 <h1><?php echo $person[0]['Oneword']; ?></h1>
             </div>
             <div class="zan">
-                <label data-id="<?php echo $person[0]['ID'];?>"><?php echo $person[0]['Good']; ?></label>
+                <label data-id=" <?php echo $person[0]['ID'];?>"><?php echo $person[0]['Good']; ?></label>
                 <span class="zan-icon"></span>
             </div>
         </div>

@@ -10,6 +10,5 @@
 	}else{
 		$data = array('res' => 0 );
 	return json_encode($data);
-
 	}
-?>
+	?>
