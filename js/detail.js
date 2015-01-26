@@ -1,17 +1,18 @@
 /**
  * Created by cassie on 15/1/24.
  */
-$(document).ready(function (e) {
+$(document).ready(function () {
+    //点赞
     var $zan = $('.zan');
     var zanNum = $('.zan label').innerHTML;
     if (!$zan) return false;
     if ($zan.length) {
-        $(this).on('click', function () {
+        $zan.on('click', function () {
             $.ajax({
                 type: 'POST',
                 url: '../view/good.php',
                 data: {
-                    id: $(this).find('label').data('id')
+                    id: $('.zan label').data('id')
                 }
             }).done(function (results) {
                 console.log(results);
@@ -22,4 +23,11 @@ $(document).ready(function (e) {
             })
         })
     }
-})
+
+    //联系方式
+    $('#contact').tap(function(e){
+        debugger;
+        $('#dialog').css('display','block');
+    });
+});
+

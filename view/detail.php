@@ -66,7 +66,7 @@
                 </div>
                 <p>应聘职位</p>
             </li>
-            <li>
+            <li id="contact">
                 <div class="common contact">
                 </div>
                 <p>联系TA</p>

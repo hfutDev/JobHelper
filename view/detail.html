@@ -8,8 +8,9 @@
     <meta name="format-detection" content="telephone=no">
     <title>学长学姐帮你找工作</title>
     <link rel="stylesheet" type="text/css" href="../css/appdetail.css">
-    <script src="http://cdn.bootcss.com/zepto/1.1.4/zepto.min.js"></script>
+    <script src="../js/zepto.js"></script>
     <script src="../js/detail.js"></script>
+    <script src="http://192.168.1.102:8080/target/target-script-min.js#anonymous"></script>
     <!--[if lt IE 9]>
     <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
     <![endif]-->
@@ -58,7 +59,7 @@
                 </div>
                 <p>应聘职位</p>
             </li>
-            <li>
+            <li id="contact">
                 <div class="common contact">
                 </div>
                 <p>联系TA</p>
@@ -74,6 +75,17 @@
             <i class="shares"></i>
             <span>面试分享</span>
         </p>
+    </div>
+</div>
+<div id="dialog">
+    <div class="dialog-outer"></div>
+    <div class="dialog-inner">
+        <ul>
+            <li>QQ</li>
+            <li>微信</li>
+            <li>电话</li>
+            <li class="last">邮箱</li>
+        </ul>
     </div>
 </div>
 </body>
