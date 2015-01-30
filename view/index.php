@@ -8,7 +8,7 @@
 <meta name="format-detection" content="telephone=no">
 <title>学长学姐帮你找工作</title>
 <link rel="stylesheet" type="text/css" href="../css/appindex.css">
-<script src="http://cdn.bootcss.com/zepto/1.1.4/zepto.min.js"></script>
+<script src="../js/zepto.min.js"></script>
 <!--[if lt IE 9]>
 <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
 <![endif]-->
