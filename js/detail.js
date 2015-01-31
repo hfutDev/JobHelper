@@ -34,19 +34,19 @@ $(document).ready(function () {
     }
 
     //触摸联系方式，将联系方式复制到粘贴板
-    var $contactLi = $('.dialog-inner li');
-    if(!$contactLi) return false;
-    else{
-        $contactLi.bind('tap',function(e){
-            var $target = $(e.target);
-            var client = new ZeroClipboard($target);
-            client.on("ready", function(readyEvent) {
-                client.on("aftercopy", function(event) {
-                    $('#dialog').css('display','none');
-                    alert("QQ号：" + event.data["text/plain"] +"已复制到粘贴板");
-                } );
-            } );
-        })
-    }
+    //zeroclip拷贝组件调用
+    var clip = new ZeroClipboard($('.dialog-inner li'));
+    clip.on("ready", function() {
+        this.on("aftercopy", function(event) {
+            var menu = event.target.innerHTML;
+            alert(menu + "号：" + event.data["text/plain"] +"已复制到粘贴板");
+            $('#dialog').css('display','none');
+        });
+    });
+
+    clip.on("error", function(event) {
+        $('#dialog').css('display','none');
+        ZeroClipboard.destroy();
+    });
 });
 

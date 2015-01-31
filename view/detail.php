@@ -9,6 +9,7 @@
     <title>学长学姐帮你找工作</title>
     <link rel="stylesheet" type="text/css" href="../css/appdetail.css">
     <script src="../js/zepto.min.js"></script>
+    <script src="../js/ZeroClipboard.min.js"></script>
     <script src="../js/detail.js"></script>
     <!--[if lt IE 9]>
     <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
@@ -29,7 +30,6 @@
     $personservice=new PersonService();
     $id=$_GET['id'];
     $person=$personservice->getSecondData($id);
-
 ?>
 <div id="main">
     <div class="main-top">
@@ -47,7 +47,7 @@
                 <h1><?php echo $person[0]['Oneword']; ?></h1>
             </div>
             <div class="zan">
-                <label data-id=" <?php echo $person[0]['ID'];?>"><?php echo $person[0]['Good']; ?></label>
+                <label data-id="<?php echo $person[0]['ID'];?>"><?php echo $person[0]['Good']; ?></label>
                 <span class="zan-icon"></span>
             </div>
         </div>
@@ -82,6 +82,17 @@
             <i class="shares"></i>
             <span>面试分享</span>
         </p>
+    </div>
+</div>
+<div id="dialog">
+    <div class="dialog-outer"></div>
+    <div class="dialog-inner">
+        <ul>
+            <li data-clipboard-text="<?php echo $person[0]['QQ']; ?>">QQ</li>
+            <li data-clipboard-text="<?php echo $person[0]['WeChat']; ?>">微信</li>
+            <li data-clipboard-text="<?php echo $person[0]['Tel']; ?>">电话</li>
+            <li data-clipboard-text="<?php echo $person[0]['Email']; ?>" class="last">邮箱</li>
+        </ul>
     </div>
 </div>
 </body>
